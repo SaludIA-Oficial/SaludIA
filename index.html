@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SaludIA - Chatbots para Clínicas Dentales</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Font Awesome para iconos -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 </head>
 <body>
   <header class="hero">
@@ -26,27 +32,28 @@
   </section>
 
   <section class="tipos-chatbot">
-    <h2>Elige tu chatbot</h2>
+    <h2>Tipos de Chatbot</h2>
     <div class="botones-chatbot">
       <button onclick="mostrarInfo('basico')">Chatbot Básico</button>
       <button onclick="mostrarInfo('avanzado')">Chatbot Avanzado</button>
     </div>
     <div id="info-chatbot" class="info-chatbot">
-      <h3>Selecciona un chatbot para ver información</h3>
+      <!-- Aquí aparecerá la info al pulsar -->
+      <p>Haz clic en un tipo de chatbot para ver más información.</p>
     </div>
   </section>
 
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
-    <p>Envíanos un mensaje y agenda tu demo sin compromiso.</p>
-    <form action="https://formsubmit.co/contacto.saludia@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://saludia-oficial.github.io/SaludIA/gracias.html" />
-      <input type="text" name="Nombre" placeholder="Tu nombre" required />
-      <input type="email" name="Email" placeholder="Tu correo" required />
-      <textarea name="Mensaje" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+    <p>¿Quieres saber más o agendar tu demo? Escríbenos por cualquiera de estas vías:</p>
+    <div class="contacto-info">
+      <a href="mailto:contacto.saludia@gmail.com" aria-label="Correo electrónico">
+        <i class="fa-solid fa-envelope"></i> contacto.saludia@gmail.com
+      </a>
+      <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i> @tu_usuario
+      </a>
+    </div>
   </section>
 
   <footer>
@@ -55,27 +62,16 @@
 
   <script>
     function mostrarInfo(tipo) {
-      const infoDiv = document.getElementById('info-chatbot');
-      if(tipo === 'basico') {
-        infoDiv.innerHTML = `
+      const info = document.getElementById('info-chatbot');
+      if (tipo === 'basico') {
+        info.innerHTML = `
           <h3>Chatbot Básico</h3>
-          <p>Ideal para clínicas pequeñas que quieren automatizar reservas y responder preguntas frecuentes simples.</p>
-          <ul>
-            <li>Agenda citas automáticamente</li>
-            <li>Respuestas predefinidas para FAQs</li>
-            <li>Interfaz sencilla y fácil de usar</li>
-          </ul>
+          <p>Ideal para atender preguntas frecuentes, agendar citas simples y brindar soporte básico 24/7.</p>
         `;
-      } else if(tipo === 'avanzado') {
-        infoDiv.innerHTML = `
+      } else if (tipo === 'avanzado') {
+        info.innerHTML = `
           <h3>Chatbot Avanzado</h3>
-          <p>Para clínicas que buscan un asistente digital más completo y personalizado.</p>
-          <ul>
-            <li>Integración con CRM y sistemas internos</li>
-            <li>Respuestas con IA y aprendizaje automático</li>
-            <li>Recordatorios automáticos por WhatsApp y email</li>
-            <li>Soporte 24/7 y análisis de datos</li>
-          </ul>
+          <p>Incluye todas las funciones del básico, más integración con sistemas de gestión, recordatorios por WhatsApp y análisis de datos para mejorar la atención.</p>
         `;
       }
     }
