@@ -38,7 +38,6 @@
       <button onclick="mostrarInfo('avanzado')">Chatbot Avanzado</button>
     </div>
     <div id="info-chatbot" class="info-chatbot">
-      <!-- Aquí aparecerá la info al pulsar -->
       <p>Haz clic en un tipo de chatbot para ver más información.</p>
     </div>
   </section>
@@ -50,10 +49,17 @@
       <a href="mailto:contacto.saludia@gmail.com" aria-label="Correo electrónico">
         <i class="fa-solid fa-envelope"></i> contacto.saludia@gmail.com
       </a>
-      <a href="https://instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i> @tu_usuario
+      <a href="https://instagram.com/saludiaoficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i> @saludiaoficial
       </a>
     </div>
+
+    <form action="mailto:contacto.saludia@gmail.com" method="post" enctype="text/plain" class="contacto-form">
+      <input type="text" name="Nombre" placeholder="Tu nombre" required />
+      <input type="email" name="Email" placeholder="Tu correo" required />
+      <textarea name="Mensaje" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
   </section>
 
   <footer>
