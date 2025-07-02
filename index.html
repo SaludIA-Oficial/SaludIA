@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SaludIA - Chatbots para Clínicas Dentales</title>
   <link rel="stylesheet" href="styles.css" />
 
@@ -40,10 +40,21 @@
     <div class="tab-content active" id="basico">
       <h3>Chatbot Básico</h3>
       <p>Ideal para atender preguntas frecuentes, agendar citas simples y brindar soporte básico 24/7.</p>
+      <ul>
+        <li>✔ Respuestas automáticas a dudas comunes</li>
+        <li>✔ Gestión simple de citas</li>
+        <li>✔ Atención inmediata sin necesidad de personal</li>
+      </ul>
     </div>
     <div class="tab-content" id="avanzado">
       <h3>Chatbot Avanzado</h3>
-      <p>Incluye todas las funciones del básico, más integración con sistemas de gestión, recordatorios por WhatsApp y análisis de datos para mejorar la atención.</p>
+      <p>Incluye todas las funciones del básico, además de:</p>
+      <ul>
+        <li>✔ Integración con sistemas de gestión dental</li>
+        <li>✔ Envío de recordatorios personalizados por WhatsApp</li>
+        <li>✔ Análisis y reportes para optimizar la atención</li>
+        <li>✔ Soporte más avanzado y adaptable</li>
+      </ul>
     </div>
   </section>
 
@@ -60,7 +71,6 @@
     </div>
 
     <form action="https://formsubmit.co/contacto.saludia@gmail.com" method="POST" class="contacto-form">
-      <!-- Para evitar spam, ocultamos campos adicionales que Formsubmit recomienda -->
       <input type="hidden" name="_captcha" value="false" />
       <input type="text" name="_honey" style="display:none" />
       <input type="text" name="Nombre" placeholder="Tu nombre" required />
@@ -75,6 +85,7 @@
   </footer>
 
   <script>
+    // Manejo pestañas chatbot
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
