@@ -6,10 +6,10 @@
   <title>SaludIA - Chatbots para Clínicas Dentales</title>
   <base href="/SaludIA/" />
   <link rel="stylesheet" href="styles.css" />
-   <img src="logo.png" alt="Logo SaludIA" class="logo" />
 </head>
 <body>
   <header class="hero">
+    <img src="logo.png" alt="Logo SaludIA" class="logo" />
     <h1>SaludIA</h1>
     <p class="tagline">El chatbot inteligente para clínicas dentales</p>
     <a href="#contacto" class="cta">Solicita tu demo gratis</a>
@@ -26,6 +26,17 @@
     </ul>
   </section>
 
+  <section class="tipos-chatbot">
+    <h2>Tipos de Chatbots</h2>
+    <div class="botones-chatbot">
+      <button onclick="mostrarInfo('basico')">Chatbot Básico</button>
+      <button onclick="mostrarInfo('avanzado')">Chatbot Avanzado</button>
+    </div>
+    <div id="info-chatbot" class="info-chatbot">
+      <!-- Aquí aparecerá la info -->
+    </div>
+  </section>
+
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
     <p>Envíanos un mensaje y agenda tu demo sin compromiso.</p>
@@ -40,5 +51,32 @@
   <footer>
     <p>© 2025 SaludIA | contacto.saludia@gmail.com</p>
   </footer>
+
+  <script>
+    function mostrarInfo(tipo) {
+      const infoDiv = document.getElementById('info-chatbot');
+      if (tipo === 'basico') {
+        infoDiv.innerHTML = `
+          <h3>Chatbot Básico</h3>
+          <p>Ideal para gestionar citas simples y responder preguntas frecuentes básicas.</p>
+          <ul>
+            <li>Agenda citas automáticamente</li>
+            <li>Respuestas rápidas 24/7</li>
+            <li>Interfaz sencilla</li>
+          </ul>
+        `;
+      } else if (tipo === 'avanzado') {
+        infoDiv.innerHTML = `
+          <h3>Chatbot Avanzado</h3>
+          <p>Incluye funciones inteligentes como recordatorios personalizados y atención vía WhatsApp.</p>
+          <ul>
+            <li>Recordatorios automáticos por WhatsApp</li>
+            <li>Integración con sistemas internos</li>
+            <li>Respuesta con IA y aprendizaje automático</li>
+          </ul>
+        `;
+      }
+    }
+  </script>
 </body>
 </html>
