@@ -100,6 +100,10 @@ header.hero .tagline {
   border-radius: 8px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* CENTRA contenido horizontalmente */
+  gap: 20px; /* espacio entre elementos hijos */
 }
 
 .tipos-chatbot h2 {
@@ -108,108 +112,9 @@ header.hero .tagline {
   font-size: 2rem;
 }
 
-.botones-chatbot button {
-  background-color: #3a8ee6;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  margin: 0 10px 20px 10px;
-  font-size: 1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.botones-chatbot button:hover {
-  background-color: #1e5bb8;
-}
-
-.info-chatbot {
-  background-color: #f0f4ff;
-  padding: 20px;
-  border-radius: 6px;
-  color: #333;
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.info-chatbot h3 {
-  margin-top: 0;
-  color: #3a8ee6;
-}
-
-/* Sección contacto */
-.contacto {
-  max-width: 600px;
-  margin: 0 auto 40px auto;
-  background: white;
-  padding: 30px 25px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-}
-
-.contacto h2 {
-  margin-bottom: 15px;
-  font-size: 1.8rem;
-  color: #1e5bb8;
-  text-align: center;
-}
-
-.contacto p {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-.contacto form input,
-.contacto form textarea {
+.botones-chatbot {
+  display: flex;
+  gap: 20px; /* espacio entre botones */
+  justify-content: center; /* centra los botones */
   width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
-}
-
-.contacto form input:focus,
-.contacto form textarea:focus {
-  border-color: #3a8ee6;
-  outline: none;
-}
-
-.contacto form textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-.contacto form button {
-  background-color: #3a8ee6;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 1.1rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  margin: 0 auto;
-}
-
-.contacto form button:hover {
-  background-color: #1e5bb8;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px 10px;
-  font-size: 0.9rem;
-  color: #777;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
-}
+  max-width: 400
