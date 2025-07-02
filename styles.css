@@ -1,25 +1,23 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Reset y estilos generales */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9fafd;
+  margin: 0;
+  padding: 0 15px;
+  background-color: #f9f9f9;
   color: #333;
-  line-height: 1.6;
-  padding: 20px;
+  text-align: center;
 }
 
-/* Encabezado hero */
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: #1a73e8;
+}
+
+/* Header Hero */
 header.hero {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #3a8ee6, #1e5bb8);
-  color: white;
-  border-radius: 8px;
+  padding: 50px 20px 60px;
+  background: #e3f2fd;
+  border-radius: 12px;
   margin-bottom: 40px;
 }
 
@@ -35,163 +33,132 @@ header.hero .logo {
 
 header.hero h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
-  font-weight: 700;
+  margin: 10px 0;
 }
 
 header.hero .tagline {
   font-size: 1.3rem;
-  font-weight: 500;
   margin-bottom: 25px;
+  color: #555;
 }
 
-/* Botón call-to-action */
-.cta {
-  background-color: #ff7043;
-  color: white;
-  padding: 15px 35px;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
+header.hero .cta {
   display: inline-block;
+  background-color: #1a73e8;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.cta:hover {
-  background-color: #e65c2a;
+header.hero .cta:hover {
+  background-color: #155ab6;
 }
 
-/* Sección beneficios */
+/* Beneficios */
 .beneficios {
   max-width: 700px;
-  margin: 0 auto 50px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-  text-align: center;
+  margin: 0 auto 50px;
+  text-align: left;
 }
 
 .beneficios h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #1e5bb8;
+  text-align: center;
 }
 
 .beneficios ul {
   list-style: none;
-  font-size: 1.1rem;
-  line-height: 2;
-  color: #555;
-  padding-left: 0;
-  display: inline-block;
-  text-align: left;
+  padding: 0;
+  font-size: 1.15rem;
+  color: #444;
 }
 
-.beneficios li::before {
+.beneficios ul li {
+  margin: 10px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.beneficios ul li::before {
   content: '✔';
-  color: #3a8ee6;
-  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  color: #1a73e8;
 }
 
-/* Sección tipos chatbot */
+/* Tipos de chatbot */
 .tipos-chatbot {
-  max-width: 700px;
-  margin: 0 auto 50px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centra horizontalmente */
-  gap: 20px;
+  margin-bottom: 50px;
 }
 
 .tipos-chatbot h2 {
-  margin-bottom: 25px;
-  color: #1e5bb8;
-  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
 .botones-chatbot {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  width: 100%;
-  max-width: 400px;
+  gap: 30px;
+  margin-bottom: 25px;
 }
 
 .botones-chatbot button {
-  flex: 1;
-  max-width: 180px;
-  background-color: #3a8ee6;
-  color: white;
-  border: none;
-  padding: 12px 0;
-  font-size: 1rem;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: 2px solid #1a73e8;
   border-radius: 30px;
+  background-color: white;
+  color: #1a73e8;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .botones-chatbot button:hover {
-  background-color: #1e5bb8;
+  background-color: #1a73e8;
+  color: white;
 }
 
 .info-chatbot {
-  background-color: #f0f4ff;
-  padding: 20px;
-  border-radius: 6px;
-  color: #333;
-  font-size: 1.1rem;
   max-width: 600px;
-  width: 100%;
-  text-align: center;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #444;
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 100px;
 }
 
-.info-chatbot h3 {
-  margin-top: 0;
-  color: #3a8ee6;
-}
-
-/* Sección contacto */
+/* Contacto */
 .contacto {
   max-width: 600px;
-  margin: 0 auto 40px auto;
-  background: white;
-  padding: 30px 25px;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
-  text-align: center;
+  margin: 0 auto 60px;
 }
 
 .contacto h2 {
   margin-bottom: 15px;
-  font-size: 1.8rem;
-  color: #1e5bb8;
 }
 
 .contacto p {
   margin-bottom: 25px;
-  font-size: 1.1rem;
   color: #555;
 }
 
+/* Contacto info con iconos */
 .contacto-info {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
+  gap: 40px;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
 }
 
 .contacto-info a {
-  color: #3a8ee6;
+  color: #1a73e8;
   text-decoration: none;
-  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -199,19 +166,61 @@ header.hero .tagline {
 }
 
 .contacto-info a:hover {
-  color: #1e5bb8;
+  color: #155ab6;
 }
 
 .contacto-info i {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+}
+
+/* Estilos para el formulario de contacto */
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+.contacto-form textarea {
+  min-height: 100px;
+}
+
+.contacto-form button {
+  background-color: #1a73e8;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contacto-form button:hover {
+  background-color: #155ab6;
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 15px 10px;
+  padding: 20px;
+  background-color: #e3f2fd;
+  color: #555;
   font-size: 0.9rem;
-  color: #777;
-  border-top: 1px solid #ddd;
-  margin-top: 40px;
 }
