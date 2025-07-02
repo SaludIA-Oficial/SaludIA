@@ -33,12 +33,17 @@
 
   <section class="tipos-chatbot">
     <h2>Tipos de Chatbot</h2>
-    <div class="botones-chatbot">
-      <button onclick="mostrarInfo('basico')">Chatbot Básico</button>
-      <button onclick="mostrarInfo('avanzado')">Chatbot Avanzado</button>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="basico">Chatbot Básico</button>
+      <button class="tab-button" data-tab="avanzado">Chatbot Avanzado</button>
     </div>
-    <div id="info-chatbot" class="info-chatbot">
-      <p>Haz clic en un tipo de chatbot para ver más información.</p>
+    <div class="tab-content active" id="basico">
+      <h3>Chatbot Básico</h3>
+      <p>Ideal para atender preguntas frecuentes, agendar citas simples y brindar soporte básico 24/7.</p>
+    </div>
+    <div class="tab-content" id="avanzado">
+      <h3>Chatbot Avanzado</h3>
+      <p>Incluye todas las funciones del básico, más integración con sistemas de gestión, recordatorios por WhatsApp y análisis de datos para mejorar la atención.</p>
     </div>
   </section>
 
@@ -55,6 +60,9 @@
     </div>
 
     <form action="https://formsubmit.co/contacto.saludia@gmail.com" method="POST" class="contacto-form">
+      <!-- Para evitar spam, ocultamos campos adicionales que Formsubmit recomienda -->
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="text" name="_honey" style="display:none" />
       <input type="text" name="Nombre" placeholder="Tu nombre" required />
       <input type="email" name="Email" placeholder="Tu correo" required />
       <textarea name="Mensaje" placeholder="Tu mensaje" required></textarea>
@@ -67,20 +75,18 @@
   </footer>
 
   <script>
-    function mostrarInfo(tipo) {
-      const info = document.getElementById('info-chatbot');
-      if (tipo === 'basico') {
-        info.innerHTML = `
-          <h3>Chatbot Básico</h3>
-          <p>Ideal para atender preguntas frecuentes, agendar citas simples y brindar soporte básico 24/7.</p>
-        `;
-      } else if (tipo === 'avanzado') {
-        info.innerHTML = `
-          <h3>Chatbot Avanzado</h3>
-          <p>Incluye todas las funciones del básico, más integración con sistemas de gestión, recordatorios por WhatsApp y análisis de datos para mejorar la atención.</p>
-        `;
-      }
-    }
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
