@@ -98,14 +98,15 @@ header.hero .cta:hover {
   margin-bottom: 20px;
 }
 
-.botones-chatbot {
+/* Pestañas */
+.tabs {
   display: flex;
   justify-content: center;
   gap: 30px;
   margin-bottom: 25px;
 }
 
-.botones-chatbot button {
+.tab-button {
   padding: 12px 25px;
   font-size: 1.1rem;
   border: 2px solid #1a73e8;
@@ -116,12 +117,18 @@ header.hero .cta:hover {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.botones-chatbot button:hover {
+.tab-button:hover {
   background-color: #1a73e8;
   color: white;
 }
 
-.info-chatbot {
+.tab-button.active {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.tab-content {
+  display: none;
   max-width: 600px;
   margin: 0 auto;
   font-size: 1.1rem;
@@ -129,7 +136,11 @@ header.hero .cta:hover {
   background-color: #e3f2fd;
   padding: 20px;
   border-radius: 10px;
-  min-height: 100px;
+  min-height: 120px;
+}
+
+.tab-content.active {
+  display: block;
 }
 
 /* Contacto */
@@ -196,34 +207,4 @@ header.hero .cta:hover {
 
 .contacto-form input:focus,
 .contacto-form textarea:focus {
-  border-color: #1a73e8;
-  outline: none;
-}
-
-.contacto-form textarea {
-  min-height: 100px;
-}
-
-.contacto-form button {
-  background-color: #1a73e8;
-  color: white;
-  padding: 15px;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contacto-form button:hover {
-  background-color: #155ab6;
-}
-
-/* Footer */
-footer {
-  padding: 20px;
-  background-color: #e3f2fd;
-  color: #555;
-  font-size: 0.9rem;
-}
+  border-color: #
