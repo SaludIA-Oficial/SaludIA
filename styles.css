@@ -136,7 +136,8 @@ header.hero .cta:hover {
   background-color: #e3f2fd;
   padding: 20px;
   border-radius: 10px;
-  min-height: 120px;
+  min-height: 150px;
+  text-align: left;
 }
 
 .tab-content.active {
@@ -192,19 +193,10 @@ header.hero .cta:hover {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  text-align: left;
 }
 
 .contacto-form input,
 .contacto-form textarea {
   padding: 12px 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
-  resize: vertical;
-  transition: border-color 0.3s ease;
-}
-
-.contacto-form input:focus,
-.contacto-form textarea:focus {
-  border-color: #
+  border: 1px
