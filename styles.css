@@ -136,6 +136,7 @@ header.hero .cta:hover {
 .contacto {
   max-width: 600px;
   margin: 0 auto 60px;
+  text-align: center;
 }
 
 .contacto h2 {
@@ -175,6 +176,8 @@ header.hero .cta:hover {
 
 /* Estilos para el formulario de contacto */
 .contacto-form {
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
