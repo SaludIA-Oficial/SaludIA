@@ -1,0 +1,166 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafd;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Encabezado hero */
+header.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #3a8ee6, #1e5bb8);
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+header.hero .logo {
+  width: 250px;
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+header.hero .tagline {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+/* Botón call-to-action */
+.cta {
+  background-color: #ff7043;
+  color: white;
+  padding: 15px 35px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta:hover {
+  background-color: #e65c2a;
+}
+
+/* Sección beneficios */
+.beneficios {
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+.beneficios h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+  color: #1e5bb8;
+}
+
+.beneficios ul {
+  list-style: none;
+  font-size: 1.1rem;
+  line-height: 2;
+  color: #555;
+}
+
+.beneficios li::before {
+  content: '✔';
+  color: #3a8ee6;
+  margin-right: 10px;
+}
+
+/* Sección contacto */
+.contacto {
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  background: white;
+  padding: 30px 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.1);
+}
+
+.contacto h2 {
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #1e5bb8;
+  text-align: center;
+}
+
+.contacto p {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.contacto form input,
+.contacto form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.contacto form input:focus,
+.contacto form textarea:focus {
+  border-color: #3a8ee6;
+  outline: none;
+}
+
+.contacto form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contacto form button {
+  background-color: #3a8ee6;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+.contacto form button:hover {
+  background-color: #1e5bb8;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
