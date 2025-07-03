@@ -1,30 +1,19 @@
-/* Reset básico */
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
   text-align: center;
+  background: #f9f9f9;
+  color: #333;
 }
 
-a {
-  color: #1e90ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Hero */
-header.hero {
-  background: #1e90ff;
+.hero {
+  background: #0a74da;
   color: #fff;
   padding: 60px 20px;
 }
 
-header.hero .logo {
+.hero .logo {
   width: 200px;
   max-width: 90%;
   margin-bottom: 20px;
@@ -33,31 +22,32 @@ header.hero .logo {
   margin-right: auto;
 }
 
-header.hero h1 {
-  font-size: 48px;
-  margin: 0 0 10px;
+.hero h1 {
+  margin: 10px 0;
+  font-size: 2.5em;
 }
 
-header.hero .tagline {
-  font-size: 20px;
-  margin-bottom: 20px;
+.hero .tagline {
+  font-size: 1.2em;
+  margin-bottom: 30px;
 }
 
-header.hero .cta {
+.cta {
+  display: inline-block;
   background: #fff;
-  color: #1e90ff;
+  color: #0a74da;
   padding: 12px 30px;
-  border-radius: 5px;
+  text-decoration: none;
+  border-radius: 30px;
   font-weight: bold;
 }
 
-/* Beneficios */
 .beneficios {
   padding: 40px 20px;
 }
 
 .beneficios h2 {
-  font-size: 32px;
+  font-size: 1.8em;
   margin-bottom: 20px;
 }
 
@@ -68,48 +58,40 @@ header.hero .cta {
 
 .beneficios li {
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 1.1em;
 }
 
-/* Chatbots */
 .chatbots {
   padding: 40px 20px;
 }
 
 .chatbots h2 {
-  font-size: 32px;
+  font-size: 1.8em;
   margin-bottom: 20px;
 }
 
 .chatbots details {
-  margin: 10px auto;
-  max-width: 500px;
-  text-align: left;
+  margin: 15px auto;
+  max-width: 600px;
   background: #fff;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius: 8px;
   border: 1px solid #ddd;
-  padding: 10px 20px;
   cursor: pointer;
 }
 
 .chatbots summary {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1em;
 }
 
-.chatbots p {
-  margin-top: 10px;
-  font-size: 16px;
-}
-
-/* Contacto */
 .contacto {
   padding: 40px 20px;
 }
 
 .contacto h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+  font-size: 1.8em;
+  margin-bottom: 10px;
 }
 
 .contacto p {
@@ -118,129 +100,43 @@ header.hero .cta {
 
 .contacto form {
   max-width: 500px;
-  margin: 0 auto 20px;
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
 }
 
 .contacto input,
 .contacto textarea {
+  width: 100%;
   padding: 12px;
-  margin: 5px 0;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .contacto button {
-  background: #1e90ff;
+  background: #0a74da;
   color: #fff;
   border: none;
-  padding: 12px;
-  border-radius: 5px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1em;
   cursor: pointer;
 }
 
-.contacto button:hover {
-  background: #0c78d5;
+.contacto .redes {
+  margin-top: 20px;
 }
 
-.contacto .contact-info {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.contacto .contact-info a {
+.contacto .redes a {
   display: inline-block;
-  margin: 5px 10px;
+  margin: 0 10px;
+  color: #0a74da;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
-/* Footer */
 footer {
-  background: #333;
+  background: #0a74da;
   color: #fff;
   padding: 20px;
-  font-size: 14px;
-}
-
-/* Chatbot flotante */
-#chatbot {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 300px;
-  max-height: 400px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  display: none;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  font-family: Arial, sans-serif;
-  z-index: 1000;
-}
-
-#chat-header {
-  background: #1e90ff;
-  color: #fff;
-  padding: 10px;
-  border-radius: 10px 10px 0 0;
-  font-weight: bold;
-}
-
-#chat-body {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-  max-height: 250px;
-}
-
-#chat-input {
-  display: flex;
-  border-top: 1px solid #ccc;
-}
-
-#chat-input input {
-  flex: 1;
-  border: none;
-  padding: 10px;
-}
-
-#chat-input button {
-  background: #1e90ff;
-  border: none;
-  color: #fff;
-  padding: 10px 15px;
-  cursor: pointer;
-}
-
-.bot-message,
-.user-message {
-  margin: 5px 0;
-  padding: 8px 12px;
-  border-radius: 5px;
-}
-
-.bot-message {
-  background: #f1f1f1;
-  text-align: left;
-}
-
-.user-message {
-  background: #1e90ff;
-  color: #fff;
-  text-align: right;
-}
-
-#chat-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #1e90ff;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 1000;
+  font-size: 0.9em;
 }
