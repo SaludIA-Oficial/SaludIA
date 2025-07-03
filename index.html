@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SaludIA - Chatbots para Clínicas Dentales</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="hero">
-    <img src="logo.png" alt="Logo SaludIA" class="logo"/>
+    <img src="logo.png" alt="Logo SaludIA" class="logo" />
     <h1>SaludIA</h1>
     <p class="tagline">El chatbot inteligente para clínicas dentales</p>
     <a href="#contacto" class="cta">Solicita tu demo gratis</a>
@@ -26,28 +26,30 @@
   </section>
 
   <section class="chatbots">
-    <h2>Planes de Chatbots</h2>
+    <h2>Planes de Chatbot</h2>
+
     <details>
       <summary>🤖 Chatbot Básico</summary>
-      <p>Automatiza preguntas frecuentes, reservas simples y recordatorios básicos.</p>
+      <p>Ideal para clínicas que desean automatizar agendamientos y respuestas frecuentes de forma sencilla.</p>
     </details>
+
     <details>
       <summary>🚀 Chatbot Avanzado</summary>
-      <p>Integra IA conversacional, CRM, WhatsApp Business API y flujos de atención profesional personalizados.</p>
+      <p>Para clínicas que buscan automatización completa: integración con sistemas de gestión, personalización avanzada y soporte premium.</p>
     </details>
   </section>
 
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
-    <p>Rellena el formulario o escríbenos directamente:</p>
+    <p>Déjanos tus datos y agenda tu demo sin compromiso.</p>
     <form action="mailto:contacto.saludia@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="Nombre" placeholder="Tu nombre" required />
       <input type="email" name="Email" placeholder="Tu correo" required />
       <textarea name="Mensaje" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
-    <div class="contact-info">
-      <a href="mailto:contacto.saludia@gmail.com">📧 contacto.saludia@gmail.com</a><br/>
+    <div class="redes">
+      <a href="mailto:contacto.saludia@gmail.com" target="_blank">📧 contacto.saludia@gmail.com</a>
       <a href="https://instagram.com/saludiaoficial" target="_blank">📸 @saludiaoficial</a>
     </div>
   </section>
@@ -55,62 +57,5 @@
   <footer>
     <p>© 2025 SaludIA</p>
   </footer>
-
-  <!-- Chatbot Simulado -->
-  <div id="chatbot">
-    <div id="chat-header">SaludIA Asistente</div>
-    <div id="chat-body">
-      <div class="bot-message">¡Hola! Soy SaludIA, ¿en qué puedo ayudarte?</div>
-    </div>
-    <div id="chat-input">
-      <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
-      <button id="send-btn">Enviar</button>
-    </div>
-  </div>
-  <button id="chat-toggle">💬</button>
-
-  <script>
-    const chatToggle = document.getElementById('chat-toggle');
-    const chatbot = document.getElementById('chatbot');
-    const sendBtn = document.getElementById('send-btn');
-    const userInput = document.getElementById('user-input');
-    const chatBody = document.getElementById('chat-body');
-
-    chatToggle.onclick = () => {
-      chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
-      chatbot.style.flexDirection = 'column';
-    };
-
-    sendBtn.onclick = () => {
-      const userText = userInput.value.trim();
-      if (userText) {
-        addMessage(userText, 'user-message');
-        respond(userText);
-        userInput.value = '';
-      }
-    };
-
-    function addMessage(text, className) {
-      const msg = document.createElement('div');
-      msg.className = className;
-      msg.innerText = text;
-      chatBody.appendChild(msg);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function respond(input) {
-      let response = "Lo siento, aún estoy aprendiendo. Pronto seré más inteligente.";
-      if (input.toLowerCase().includes('cita')) {
-        response = "Puedes agendar tu cita escribiéndonos al correo o por Instagram.";
-      } else if (input.toLowerCase().includes('precio')) {
-        response = "Para conocer precios, contáctanos y te enviaremos toda la información.";
-      } else if (input.toLowerCase().includes('hola')) {
-        response = "¡Hola! ¿Cómo puedo ayudarte hoy?";
-      }
-      setTimeout(() => {
-        addMessage(response, 'bot-message');
-      }, 500);
-    }
-  </script>
 </body>
 </html>
