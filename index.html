@@ -2,19 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SaludIA - Chatbots para Clínicas Dentales</title>
-  <link rel="stylesheet" href="styles.css" />
-
-  <!-- Font Awesome para iconos -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <header class="hero">
-    <img src="logo.png" alt="Logo SaludIA" class="logo" />
+    <img src="logo.png" alt="Logo SaludIA" class="logo"/>
     <h1>SaludIA</h1>
     <p class="tagline">El chatbot inteligente para clínicas dentales</p>
     <a href="#contacto" class="cta">Solicita tu demo gratis</a>
@@ -31,75 +25,92 @@
     </ul>
   </section>
 
-  <section class="tipos-chatbot">
-    <h2>Tipos de Chatbot</h2>
-    <div class="tabs">
-      <button class="tab-button active" data-tab="basico">Chatbot Básico</button>
-      <button class="tab-button" data-tab="avanzado">Chatbot Avanzado</button>
-    </div>
-    <div class="tab-content active" id="basico">
-      <h3>Chatbot Básico</h3>
-      <p>Ideal para atender preguntas frecuentes, agendar citas simples y brindar soporte básico 24/7.</p>
-      <ul>
-        <li>✔ Respuestas automáticas a dudas comunes</li>
-        <li>✔ Gestión simple de citas</li>
-        <li>✔ Atención inmediata sin necesidad de personal</li>
-      </ul>
-    </div>
-    <div class="tab-content" id="avanzado">
-      <h3>Chatbot Avanzado</h3>
-      <p>Nuestro chatbot avanzado está diseñado para ofrecer una gestión automatizada integral, potenciando la eficiencia operativa y mejorando la experiencia del paciente mediante inteligencia artificial de última generación.</p>
-      <ul>
-        <li>✔ Integración completa con sistemas de gestión clínica y CRM especializados en odontología.</li>
-        <li>✔ Automatización personalizada de recordatorios y comunicaciones multicanal, incluyendo WhatsApp y correo electrónico.</li>
-        <li>✔ Análisis de datos e informes en tiempo real para optimizar la toma de decisiones.</li>
-        <li>✔ Capacidad de aprendizaje continuo para adaptar respuestas y procesos según las necesidades específicas de cada clínica.</li>
-        <li>✔ Soporte técnico avanzado y escalabilidad para clínicas en crecimiento.</li>
-      </ul>
-    </div>
+  <section class="chatbots">
+    <h2>Planes de Chatbots</h2>
+    <details>
+      <summary>🤖 Chatbot Básico</summary>
+      <p>Automatiza preguntas frecuentes, reservas simples y recordatorios básicos.</p>
+    </details>
+    <details>
+      <summary>🚀 Chatbot Avanzado</summary>
+      <p>Integra IA conversacional, CRM, WhatsApp Business API y flujos de atención profesional personalizados.</p>
+    </details>
   </section>
 
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
-    <p>¿Quieres saber más o agendar tu demo? Escríbenos por cualquiera de estas vías:</p>
-    <div class="contacto-info">
-      <a href="mailto:contacto.saludia@gmail.com" aria-label="Correo electrónico">
-        <i class="fa-solid fa-envelope"></i> contacto.saludia@gmail.com
-      </a>
-      <a href="https://instagram.com/saludiaoficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i> @saludiaoficial
-      </a>
-    </div>
-
-    <form action="https://formsubmit.co/contacto.saludia@gmail.com" method="POST" class="contacto-form">
-      <input type="hidden" name="_next" value="https://saludia-oficial.github.io/SaludIA/">
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="text" name="_honey" style="display:none" />
+    <p>Rellena el formulario o escríbenos directamente:</p>
+    <form action="mailto:contacto.saludia@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="Nombre" placeholder="Tu nombre" required />
       <input type="email" name="Email" placeholder="Tu correo" required />
       <textarea name="Mensaje" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
+    <div class="contact-info">
+      <a href="mailto:contacto.saludia@gmail.com">📧 contacto.saludia@gmail.com</a><br/>
+      <a href="https://instagram.com/saludiaoficial" target="_blank">📸 @saludiaoficial</a>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 SaludIA | contacto.saludia@gmail.com</p>
+    <p>© 2025 SaludIA</p>
   </footer>
 
+  <!-- Chatbot Simulado -->
+  <div id="chatbot">
+    <div id="chat-header">SaludIA Asistente</div>
+    <div id="chat-body">
+      <div class="bot-message">¡Hola! Soy SaludIA, ¿en qué puedo ayudarte?</div>
+    </div>
+    <div id="chat-input">
+      <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+      <button id="send-btn">Enviar</button>
+    </div>
+  </div>
+  <button id="chat-toggle">💬</button>
+
   <script>
-    // Manejo de pestañas de tipos de chatbot
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
+    const chatToggle = document.getElementById('chat-toggle');
+    const chatbot = document.getElementById('chatbot');
+    const sendBtn = document.getElementById('send-btn');
+    const userInput = document.getElementById('user-input');
+    const chatBody = document.getElementById('chat-body');
 
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
+    chatToggle.onclick = () => {
+      chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+      chatbot.style.flexDirection = 'column';
+    };
 
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
+    sendBtn.onclick = () => {
+      const userText = userInput.value.trim();
+      if (userText) {
+        addMessage(userText, 'user-message');
+        respond(userText);
+        userInput.value = '';
+      }
+    };
+
+    function addMessage(text, className) {
+      const msg = document.createElement('div');
+      msg.className = className;
+      msg.innerText = text;
+      chatBody.appendChild(msg);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function respond(input) {
+      let response = "Lo siento, aún estoy aprendiendo. Pronto seré más inteligente.";
+      if (input.toLowerCase().includes('cita')) {
+        response = "Puedes agendar tu cita escribiéndonos al correo o por Instagram.";
+      } else if (input.toLowerCase().includes('precio')) {
+        response = "Para conocer precios, contáctanos y te enviaremos toda la información.";
+      } else if (input.toLowerCase().includes('hola')) {
+        response = "¡Hola! ¿Cómo puedo ayudarte hoy?";
+      }
+      setTimeout(() => {
+        addMessage(response, 'bot-message');
+      }, 500);
+    }
   </script>
 </body>
 </html>
