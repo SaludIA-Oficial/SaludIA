@@ -1,142 +1,202 @@
+/* Reset y estilos generales */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  padding: 0;
-  text-align: center;
-  background: #f9f9f9;
+  padding: 0 15px;
+  background-color: #f9f9f9;
   color: #333;
+  text-align: center;
 }
 
-.hero {
-  background: #0a74da;
-  color: #fff;
-  padding: 60px 20px;
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: #1a73e8;
 }
 
-.hero .logo {
-  width: 200px;
+/* Header Hero */
+header.hero {
+  padding: 50px 20px 60px;
+  background: #e3f2fd;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+header.hero .logo {
+  width: 250px;
   max-width: 90%;
+  height: auto;
   margin-bottom: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.hero h1 {
+header.hero h1 {
+  font-size: 3rem;
   margin: 10px 0;
-  font-size: 2.5em;
 }
 
-.hero .tagline {
-  font-size: 1.2em;
-  margin-bottom: 30px;
+header.hero .tagline {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #555;
 }
 
-.cta {
+header.hero .cta {
   display: inline-block;
-  background: #fff;
-  color: #0a74da;
-  padding: 12px 30px;
-  text-decoration: none;
+  background-color: #1a73e8;
+  color: white;
+  padding: 15px 30px;
   border-radius: 30px;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
+header.hero .cta:hover {
+  background-color: #155ab6;
+}
+
+/* Beneficios */
 .beneficios {
-  padding: 40px 20px;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  text-align: left;
 }
 
 .beneficios h2 {
-  font-size: 1.8em;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
 .beneficios ul {
   list-style: none;
   padding: 0;
+  font-size: 1.15rem;
+  color: #444;
 }
 
-.beneficios li {
+.beneficios ul li {
   margin: 10px 0;
-  font-size: 1.1em;
+  padding-left: 25px;
+  position: relative;
 }
 
-.chatbots {
-  padding: 40px 20px;
+.beneficios ul li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  color: #1a73e8;
 }
 
-.chatbots h2 {
-  font-size: 1.8em;
+/* Tipos de chatbot */
+.tipos-chatbot {
+  margin-bottom: 50px;
+}
+
+.tipos-chatbot h2 {
   margin-bottom: 20px;
 }
 
-.chatbots details {
-  margin: 15px auto;
-  max-width: 600px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+/* Pestañas */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.tab-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border: 2px solid #1a73e8;
+  border-radius: 30px;
+  background-color: white;
+  color: #1a73e8;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.chatbots summary {
-  font-weight: bold;
-  font-size: 1.1em;
+.tab-button:hover {
+  background-color: #1a73e8;
+  color: white;
 }
 
+.tab-button.active {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #444;
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: 10px;
+  min-height: 150px;
+  text-align: left;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Contacto */
 .contacto {
-  padding: 40px 20px;
+  max-width: 600px;
+  margin: 0 auto 60px;
+  text-align: center;
 }
 
 .contacto h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .contacto p {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  color: #555;
 }
 
-.contacto form {
-  max-width: 500px;
-  margin: 0 auto;
+/* Contacto info con iconos */
+.contacto-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
 }
 
-.contacto input,
-.contacto textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.contacto button {
-  background: #0a74da;
-  color: #fff;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.contacto .redes {
-  margin-top: 20px;
-}
-
-.contacto .redes a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #0a74da;
+.contacto-info a {
+  color: #1a73e8;
   text-decoration: none;
-  font-size: 1.1em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease;
 }
 
-footer {
-  background: #0a74da;
-  color: #fff;
-  padding: 20px;
-  font-size: 0.9em;
+.contacto-info a:hover {
+  color: #155ab6;
 }
+
+.contacto-info i {
+  font-size: 1.5rem;
+}
+
+/* Estilos para el formulario de contacto */
+.contacto-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  padding: 12px 15px;
+  border: 1px
