@@ -5,14 +5,201 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SaludIA - Chatbots para Clínicas Dentales</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Font Awesome para iconos -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    /* Estilos centrales adaptados a tu web actual */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      background: #f9f9f9;
+      color: #222;
+      text-align: center;
+    }
+    header.hero {
+      background: #0a74da;
+      color: white;
+      padding: 40px 20px 60px;
+    }
+    .logo {
+      width: 200px;
+      max-width: 90%;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    h1 {
+      margin: 0 0 10px;
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .tagline {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    .cta {
+      background: #f49c20;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s ease;
+    }
+    .cta:hover {
+      background: #d17b10;
+    }
+    section.beneficios {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+    section.beneficios h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    section.beneficios ul {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    section.beneficios ul li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 25px;
+    }
+    section.beneficios ul li::before {
+      content: "✔";
+      color: #0a74da;
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+    section.chatbots {
+      max-width: 700px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+      text-align: left;
+    }
+    section.chatbots h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    section.chatbots details {
+      background: white;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+      cursor: pointer;
+    }
+    section.chatbots details summary {
+      font-size: 1.3rem;
+      font-weight: 700;
+      outline: none;
+      user-select: none;
+      list-style: none;
+      position: relative;
+      padding-left: 25px;
+    }
+    section.chatbots details summary::before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      transition: transform 0.3s ease;
+    }
+    section.chatbots details[open] summary::before {
+      transform: rotate(90deg);
+    }
+    section.chatbots p {
+      margin: 10px 0 0 0;
+      font-size: 1rem;
+      color: #333;
+    }
+    section.contacto {
+      max-width: 500px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+    section.contacto h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    section.contacto p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      color: #555;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+      font-family: inherit;
+    }
+    textarea {
+      min-height: 100px;
+    }
+    button {
+      background: #0a74da;
+      color: white;
+      font-size: 1.2rem;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #065aaa;
+    }
+    .contact-info {
+      margin-top: 20px;
+      font-size: 1.1rem;
+    }
+    .contact-info a {
+      color: #0a74da;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.3s ease;
+    }
+    .contact-info a:hover {
+      color: #065aaa;
+    }
+    footer {
+      background: #0a74da;
+      color: white;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
+
   <header class="hero">
     <img src="logo.png" alt="Logo SaludIA" class="logo" />
     <h1>SaludIA</h1>
@@ -23,96 +210,57 @@
   <section class="beneficios">
     <h2>¿Qué puede hacer SaludIA por tu clínica?</h2>
     <ul>
-      <li>✔ Agenda citas automáticamente</li>
-      <li>✔ Responde preguntas frecuentes 24/7</li>
-      <li>✔ Envía recordatorios por WhatsApp</li>
-      <li>✔ Aumenta la productividad del equipo</li>
-      <li>✔ Mejora la experiencia del paciente</li>
+      <li>Agenda citas automáticamente</li>
+      <li>Responde preguntas frecuentes 24/7</li>
+      <li>Envía recordatorios por WhatsApp</li>
+      <li>Aumenta la productividad del equipo</li>
+      <li>Mejora la experiencia del paciente</li>
     </ul>
   </section>
 
-  <section class="tipos-chatbot">
-    <h2>Tipos de Chatbot</h2>
-    <div class="tabs">
-      <button class="tab-button active" data-tab="basico">Chatbot Básico</button>
-      <button class="tab-button" data-tab="avanzado">Chatbot Avanzado</button>
-    </div>
-    <div class="tab-content active" id="basico">
-      <h3>Chatbot Básico</h3>
-      <p>Ideal para atender preguntas frecuentes, agendar citas simples y brindar soporte básico 24/7.</p>
-      <ul>
-        <li>✔ Respuestas automáticas a dudas comunes</li>
-        <li>✔ Gestión simple de citas</li>
-        <li>✔ Atención inmediata sin necesidad de personal</li>
-      </ul>
-    </div>
-    <div class="tab-content" id="avanzado">
-      <h3>Chatbot Avanzado</h3>
-      <p>Nuestro chatbot avanzado está diseñado para ofrecer una gestión automatizada integral, potenciando la eficiencia operativa y mejorando la experiencia del paciente mediante inteligencia artificial de última generación.</p>
-      <ul>
-        <li>✔ Integración completa con sistemas de gestión clínica y CRM especializados en odontología.</li>
-        <li>✔ Automatización personalizada de recordatorios y comunicaciones multicanal, incluyendo WhatsApp y correo electrónico.</li>
-        <li>✔ Análisis de datos e informes en tiempo real para optimizar la toma de decisiones.</li>
-        <li>✔ Capacidad de aprendizaje continuo para adaptar respuestas y procesos según las necesidades específicas de cada clínica.</li>
-        <li>✔ Soporte técnico avanzado y escalabilidad para clínicas en crecimiento.</li>
-      </ul>
-    </div>
+  <section class="chatbots">
+    <h2>Tipos de Chatbots</h2>
+    <details>
+      <summary>🤖 Chatbot Básico</summary>
+      <p>Responde preguntas frecuentes, agenda citas simples y funciona 24/7 para tu clínica dental.</p>
+    </details>
+    <details>
+      <summary>💼 Chatbot Avanzado</summary>
+      <p>Integra recordatorios automáticos, WhatsApp Business, base de datos de pacientes, flujos de conversación personalizados y soporte premium para clínicas dentales que buscan automatización profesional.</p>
+    </details>
   </section>
 
   <section id="contacto" class="contacto">
     <h2>Contáctanos</h2>
-    <p>¿Quieres saber más o agendar tu demo? Escríbenos por cualquiera de estas vías:</p>
-    <div class="contacto-info">
-      <a href="mailto:contacto.saludia@gmail.com" aria-label="Correo electrónico">
-        <i class="fa-solid fa-envelope"></i> contacto.saludia@gmail.com
-      </a>
-      <a href="https://instagram.com/saludiaoficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i> @saludiaoficial
-      </a>
-    </div>
-
-    <form action="https://formsubmit.co/contacto.saludia@gmail.com" method="POST" class="contacto-form">
-      <input type="hidden" name="_next" value="https://saludia-oficial.github.io/SaludIA/">
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="text" name="_honey" style="display:none" />
+    <p>Agenda tu demo sin compromiso. Te responderemos lo antes posible.</p>
+    <form action="mailto:contacto.saludia@gmail.com" method="post" enctype="text/plain">
       <input type="text" name="Nombre" placeholder="Tu nombre" required />
       <input type="email" name="Email" placeholder="Tu correo" required />
       <textarea name="Mensaje" placeholder="Tu mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
+    <div class="contact-info">
+      <a href="mailto:contacto.saludia@gmail.com" target="_blank"><i class="fas fa-envelope"></i> contacto.saludia@gmail.com</a>
+      <a href="https://www.instagram.com/saludiaoficial/" target="_blank"><i class="fab fa-instagram"></i> @saludiaoficial</a>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 SaludIA | contacto.saludia@gmail.com</p>
   </footer>
 
-  <script>
-    // Manejo de pestañas de tipos de chatbot
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        button.classList.add('active');
-        document.getElementById(button.dataset.tab).classList.add('active');
-      });
-    });
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/686bd92e65db7e1911cf0665/1ivikgo47';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  <!-- Tawk.to Script -->
+  <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/686bd92e65db7e1911cf0665/1ivikgo47';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+  </script>
 
 </body>
 </html>
